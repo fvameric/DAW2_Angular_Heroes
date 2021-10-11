@@ -17,9 +17,15 @@ export class ListadoComponent implements OnInit {
     { nombre: 'hulk', edad: 50 }
   ]
 
+  indice: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  eliminarHeroe(indice:number) {
+    delete this.heroes[indice];
   }
 
 }
