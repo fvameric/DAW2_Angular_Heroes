@@ -3,6 +3,7 @@
     <tr *ngFor="let heroe of heroes; let i = index">
         <td>{{heroe.nombre}}</td>
         <td><button type="button" (click)="eliminarHeroe(i)">Eliminar</button></td>
+        <td><button type="button" (click)="modificarHeroe(i)">Modificar</button></td>
         <td><button type="button" (click)="verDetallesHeroe(i)">Ver Detalles</button></td>
         <td *ngIf="seleccionado && indice == i">
             {{heroeDetalle.id}} - {{heroeDetalle.nombre}} - {{heroeDetalle.edad}}
@@ -11,3 +12,12 @@
 </table>
 <br>
 <div *ngIf="heroeEliminado.nombre">Se eliminó: {{heroeEliminado.nombre}}</div>
+
+<div>
+    <h3>Modificar heroe {{heroeModificado.nombre}}</h3>
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="username" name="username" #username>
+        <button type="button" (click)="clickme(username.value)">Clickme</button>
+    </div>
+</div>

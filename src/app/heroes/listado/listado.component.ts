@@ -23,9 +23,13 @@ export class ListadoComponent implements OnInit {
   heroeDetalle: Heroe = {
     id: 0, nombre: '', edad: 0
   };
-
+  heroeModificado: Heroe = {
+    id: 0, nombre: '', edad: 0
+  };
+  
   seleccionado: boolean = false;
   indice: number = 0;
+  indiceModificado: number = 0;
 
   constructor(
   ) { }
@@ -40,16 +44,19 @@ export class ListadoComponent implements OnInit {
     this.heroes.splice(i,1);
   }
 
-  /*
   modificarHeroe(i:number) {
-    this.heroes[indice].nombre = "LEMAO";
+    this.heroeModificado = this.heroes[i];
+    this.indiceModificado = i;
   }
-  */
-
+  
   verDetallesHeroe(i:number) {
     this.indice = i;
     this.seleccionado = true;
     this.heroeDetalle = this.heroes[i];
+  }
+
+  clickme(str:string) {
+    this.heroes[this.indiceModificado].nombre = str;
   }
 
 }
