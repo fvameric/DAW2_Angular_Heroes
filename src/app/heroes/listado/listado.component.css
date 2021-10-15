@@ -2,3 +2,13 @@ th {
     text-align: left;
     font-weight: bold;
 }
+
+.divModificado {
+    background-color: rgb(241, 64, 64);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 400px;
+    color: #000000;
+}

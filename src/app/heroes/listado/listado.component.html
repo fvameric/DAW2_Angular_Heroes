@@ -11,13 +11,21 @@
     </tr>
 </table>
 <br>
-<div *ngIf="heroeEliminado.nombre">Se eliminó: {{heroeEliminado.nombre}}</div>
 
-<div>
+<div class="divModificado" *ngIf="heroeModificado.nombre && !eliminado">
     <h3>Modificar heroe {{heroeModificado.nombre}}</h3>
     <div>
         <label for="name">Name</label>
         <input type="text" id="username" name="username" #username>
-        <button type="button" (click)="clickme(username.value)">Clickme</button>
+        <button type="button" (click)="submit(username.value)">Aceptar modificaciones</button>
+        <br>
+        <br>
     </div>
 </div>
+
+<ng-container *ngIf="heroeEliminado.nombre; else ningunoBorrado">
+    Se eliminó: {{heroeEliminado.nombre}}
+</ng-container>
+<ng-template #ningunoBorrado>
+    No se borró ningún heroe
+</ng-template>

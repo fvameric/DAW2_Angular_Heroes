@@ -26,7 +26,8 @@ export class ListadoComponent implements OnInit {
   heroeModificado: Heroe = {
     id: 0, nombre: '', edad: 0
   };
-  
+
+  eliminado: boolean = false;
   seleccionado: boolean = false;
   indice: number = 0;
   indiceModificado: number = 0;
@@ -40,11 +41,13 @@ export class ListadoComponent implements OnInit {
 
   eliminarHeroe(i:number) {
     this.indice = -1;
+    this.eliminado = true;
     this.heroeEliminado = this.heroes[i];
     this.heroes.splice(i,1);
   }
 
   modificarHeroe(i:number) {
+    this.eliminado = false;
     this.heroeModificado = this.heroes[i];
     this.indiceModificado = i;
   }
@@ -55,8 +58,7 @@ export class ListadoComponent implements OnInit {
     this.heroeDetalle = this.heroes[i];
   }
 
-  clickme(str:string) {
+  submit(str:string) {
     this.heroes[this.indiceModificado].nombre = str;
   }
-
 }
