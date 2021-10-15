@@ -1,8 +1,13 @@
 <h1>Componente listado:</h1>
-<ul class="heroesLista">
-    <li *ngFor="let heroe of heroes; let i = index">
-        <button (click)="eliminarHeroe(i)">Borrar</button> {{i+1}} - {{heroe.nombre}}{{heroe.edad}} 
-    </li>
-</ul>
-
- {{indice}}
+<table>
+    <tr *ngFor="let heroe of heroes; let i = index">
+        <td>{{heroe.nombre}}</td>
+        <td><button type="button" (click)="eliminarHeroe(i)">Eliminar</button></td>
+        <td><button type="button" (click)="verDetallesHeroe(i)">Ver Detalles</button></td>
+        <td *ngIf="seleccionado && indice == i">
+            {{heroeDetalle.id}} - {{heroeDetalle.nombre}} - {{heroeDetalle.edad}}
+        </td>
+    </tr>
+</table>
+<br>
+<div *ngIf="heroeEliminado.nombre">Se eliminó: {{heroeEliminado.nombre}}</div>
