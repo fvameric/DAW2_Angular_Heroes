@@ -1,5 +1,11 @@
 th {
     text-align: left;
+}
+
+label {
+    background-color: rgb(116, 216, 250);
+    padding: 2px;
+    border-radius: 5px;
     font-weight: bold;
 }
 
@@ -9,6 +15,44 @@ th {
     -moz-border-radius: 5px;
     border-radius: 5px;
     padding: 10px;
-    width: 400px;
-    color: #000000;
+    width: 350px;
+}
+
+.divModificado h3 {
+    font-weight: bold;
+    color: black;
+}
+
+.divModificado label {
+    font-weight: bold;
+    color: black;
+}
+
+.btn-modificar:hover {
+    background-color: rgb(160, 160, 160);
+}
+
+.btn-modificar:focus {
+    background-color:cornflowerblue;
+}
+
+.btn-aceptarmodif:active {
+    background-color: cornflowerblue;
+}
+
+.btn-danger {
+    background-color: rgb(241, 64, 64);
+}
+
+.btn-danger:hover {
+    background-color: rgb(170, 3, 3);
+}
+
+.btn-heroes {
+    float: right;
+    background-color:forestgreen;
+}
+
+.btn-heroes:hover {
+    background-color:rgb(0, 97, 0);
 }

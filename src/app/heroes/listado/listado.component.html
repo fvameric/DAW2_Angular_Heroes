@@ -1,30 +1,40 @@
 <h1>Componente listado:</h1>
 <table>
     <tr *ngFor="let heroe of heroes; let i = index">
-        <td>{{heroe.nombre}}</td>
-        <td><button type="button" (click)="eliminarHeroe(i)">Eliminar</button></td>
-        <td><button type="button" (click)="modificarHeroe(i)">Modificar</button></td>
-        <td><button type="button" (click)="verDetallesHeroe(i)">Ver Detalles</button></td>
-        <td *ngIf="seleccionado && indice == i">
-            {{heroeDetalle.id}} - {{heroeDetalle.nombre}} - {{heroeDetalle.edad}}
+        <td><button type="button" class="btn-modificar" (click)="modificarHeroe(i)">Modificar</button></td>
+        <td><button type="button" class="btn-danger" (click)="eliminarHeroe(i)">Eliminar</button></td>
+        <td><button type="button" class="btn-heroes" (click)="verDetallesHeroe(i)">{{heroe.nombre}}</button></td>
+        <td *ngIf="selecVerDetalles && indice == i">
+            <div class="detalles">
+                Nombre: <label>{{heroeDetalle.nombre}}</label> Edad: <label>{{heroeDetalle.edad}}</label>
+            </div>
         </td>
     </tr>
 </table>
 <br>
 
 <div class="divModificado" *ngIf="selecModificado && heroeModificado.nombre && !eliminado">
-    <h3>Modificar heroe {{heroeModificado.nombre}}</h3>
+    <h3>Modificar héroe:</h3>
     <div>
-        <label for="name">Name</label>
-        <input type="text" id="username" name="username" #username>
-        <button type="button" (click)="submit(username.value)">Aceptar modificaciones</button>
+        <input type="text" value="{{heroeModificado.nombre}}" id="username" name="username" #username>
+        <br>
+        <input type="text" value="{{heroeModificado.edad}}" id="edad" name="edad" #edad>
+        <br><br>
+        <button type="button" class="btn-aceptarmodif" (click)="submit(username.value, edad.value)">Aceptar modificaciones</button>
         <br><br>
     </div>
 </div>
 
 <ng-container *ngIf="heroeEliminado.nombre; else ningunoBorrado">
-    <br><br>Se eliminó: {{heroeEliminado.nombre}}
+    <h3>Se eliminó: <label>{{heroeEliminado.nombre}}</label></h3>
 </ng-container>
 <ng-template #ningunoBorrado>
-    <br><br>No se borró ningún heroe
+    <h3>No se borró ningún héroe</h3>
+</ng-template>
+
+<ng-container *ngIf="heroeDetalle.nombre; else ningunoSeleccionado">
+    <h3>Se seleccionó el héroe: <label>{{heroeDetalle.nombre}}</label></h3>
+</ng-container>
+<ng-template #ningunoSeleccionado>
+    <h3>No se seleccionó ningún héroe.</h3>
 </ng-template>
