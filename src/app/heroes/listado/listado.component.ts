@@ -29,6 +29,8 @@ export class ListadoComponent implements OnInit {
 
   eliminado: boolean = false;
   seleccionado: boolean = false;
+  selecModificado: boolean = false;
+
   indice: number = 0;
   indiceModificado: number = 0;
 
@@ -50,6 +52,14 @@ export class ListadoComponent implements OnInit {
     this.eliminado = false;
     this.heroeModificado = this.heroes[i];
     this.indiceModificado = i;
+
+    //para abrir y cerrar el div con el mismo botón
+    if (this.selecModificado) {
+      this.selecModificado = false;
+    } else {
+      this.selecModificado = true;
+    }
+    
   }
   
   verDetallesHeroe(i:number) {
