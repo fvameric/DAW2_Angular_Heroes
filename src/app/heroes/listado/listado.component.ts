@@ -37,6 +37,8 @@ export class ListadoComponent implements OnInit {
   selecVerDetalles: boolean = false;
   selecModificado: boolean = false;
 
+  str1: string = "";
+  str2: string = "";
   // el primer índice lo utilizo para saber cual se selecciona para ver detalles o para eliminar
   // 'indiceModificado' lo utilizo tan solo como flag, para saber si el botón que pulso es el mismo que el que estoy viendo en
   // la ventanita de modificar, en caso de ser el mismo botón, pues se ocultará, si es un índice distinto
@@ -49,6 +51,9 @@ export class ListadoComponent implements OnInit {
   ) { }
   
   ngOnInit(): void {
+    for (var i = 0; i<this.heroes.length; i++) {
+      this.heroes[i] = this.capitalize(i);
+    }
   }
 
   // click de eliminar
@@ -67,7 +72,7 @@ export class ListadoComponent implements OnInit {
   verDetallesHeroe(i:number) {
     this.indice = i;
     this.selecVerDetalles = true;
-    this.heroeDetalle = this.heroes[i];
+    this.heroeDetalle = this.capitalize(i);
   }
 
   // click para modificar
@@ -93,5 +98,12 @@ export class ListadoComponent implements OnInit {
   submit(nuevoNombre:string, nuevaEdad:string) {
     this.heroes[this.indiceModificado].nombre = nuevoNombre;
     this.heroes[this.indiceModificado].edad = parseInt(nuevaEdad);
+  }
+
+  capitalize(i: number): Heroe {
+    this.str1 = this.heroes[i].nombre.slice(1);
+    this.str2 = this.heroes[i].nombre.charAt(0).toUpperCase();
+    this.heroes[i].nombre = this.str2 + this.str1;
+    return this.heroes[i];
   }
 }

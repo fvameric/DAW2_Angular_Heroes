@@ -7,6 +7,9 @@ import { ContadorComponent } from './contador/contador/contador.component';
 import { HeroesComponent } from './heroes/Heroe/heroes.component';
 import { ListadoComponent } from './heroes/listado/listado.component';
 
+//import module
+import { DbzModule } from './dbz/dbz.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,8 @@ import { ListadoComponent } from './heroes/listado/listado.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DbzModule
   ],
   providers: [],
   bootstrap: [

@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <hr><h1>Ejercicio 3</h1>
+    <h2>Componente personaje:</h2>
+    <h3>Listado de personajes:</h3>
+    <ul *ngFor="let personaje of personajes">
+        <li>{{personaje.nombre}}</li>
+        <li>{{personaje.poder}}</li>
+    </ul>
+    <div class="formulario">
+        <h3>Agregar un nuevo personaje:</h3>
+        <form #formulario = "ngForm" (ngSubmit)="submit(formulario)">
+            <input type="text" [(ngModel)]="nombrePjNuevo" name="nombre">
+            <input type="number" [(ngModel)]="poderPjNuevo" name="poder">
+            <input type="submit" value="enviar">
+        </form>
+    </div>
+</div>
+

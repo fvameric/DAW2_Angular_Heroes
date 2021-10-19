@@ -3,10 +3,10 @@
     <tr *ngFor="let heroe of heroes; let i = index">
         <td><button type="button" class="btn-modificar" (click)="modificarHeroe(i)">Modificar</button></td>
         <td><button type="button" class="btn-danger" (click)="eliminarHeroe(i)">Eliminar</button></td>
-        <td><button type="button" class="btn-heroes" (click)="verDetallesHeroe(i)">{{heroe.nombre}}</button></td>
+        <td><button type="button" class="btn-heroes" (click)="verDetallesHeroe(i)" class="nombreListado">{{heroe.nombre}}</button></td>
         <td *ngIf="selecVerDetalles && indice == i">
             <div class="detalles">
-                Nombre: <label>{{heroeDetalle.nombre}}</label> Edad: <label>{{heroeDetalle.edad}}</label>
+                Nombre: <label class="nombre">{{heroeDetalle.nombre}}</label> Edad: <label>{{heroeDetalle.edad}}</label>
             </div>
         </td>
     </tr>
@@ -26,14 +26,14 @@
 </div>
 
 <ng-container *ngIf="heroeEliminado.nombre; else ningunoBorrado">
-    <h3>Se eliminó: <label>{{heroeEliminado.nombre}}</label></h3>
+    <h3>Se eliminó: <label class="nombre">{{heroeEliminado.nombre}}</label></h3>
 </ng-container>
 <ng-template #ningunoBorrado>
     <h3>No se borró ningún héroe</h3>
 </ng-template>
 
 <ng-container *ngIf="heroeDetalle.nombre; else ningunoSeleccionado">
-    <h3>Se seleccionó el héroe: <label>{{heroeDetalle.nombre}}</label></h3>
+    <h3>Se seleccionó el héroe: <label class="nombre">{{heroeDetalle.nombre}}</label></h3>
 </ng-container>
 <ng-template #ningunoSeleccionado>
     <h3>No se seleccionó ningún héroe.</h3>
