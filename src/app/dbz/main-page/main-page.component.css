@@ -1,5 +1,25 @@
 .formulario{
     position: absolute;
-    bottom: 150px;
-    right: 40px;
+    bottom: 15%;
+    left: 350px;
+}
+
+.listado {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.listado-items {
+    margin: 5px;
+    padding: 5px;
+    border-right: 4px solid rgba(28,110,164,0.61);
+}
+
+.listado-items-nombre {
+    
+}
+
+.listado-items-poder {
+    
 }

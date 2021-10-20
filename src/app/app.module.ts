@@ -9,6 +9,7 @@ import { ListadoComponent } from './heroes/listado/listado.component';
 
 //import module
 import { DbzModule } from './dbz/dbz.module';
+import { MainPageComponent } from './dbz/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DbzModule } from './dbz/dbz.module';
   bootstrap: [
     ContadorComponent,
     HeroesComponent,
-    ListadoComponent]
+    ListadoComponent,
+    MainPageComponent]
 })
 export class AppModule { }

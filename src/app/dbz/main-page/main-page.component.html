@@ -2,10 +2,13 @@
     <hr><h1>Ejercicio 3</h1>
     <h2>Componente personaje:</h2>
     <h3>Listado de personajes:</h3>
-    <ul *ngFor="let personaje of personajes">
-        <li>{{personaje.nombre}}</li>
-        <li>{{personaje.poder}}</li>
-    </ul>
+    <div class="listado">
+        <div class="listado-items" *ngFor="let personaje of personajes">
+            <div class="listado-items-nombre">{{personaje.nombre}}</div>
+            <div class="listado-items-poder">{{personaje.poder}}</div>
+        </div>
+    </div>
+
     <div class="formulario">
         <h3>Agregar un nuevo personaje:</h3>
         <form #formulario = "ngForm" (ngSubmit)="submit(formulario)">
