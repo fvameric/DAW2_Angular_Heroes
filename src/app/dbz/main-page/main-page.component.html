@@ -3,10 +3,10 @@
     <h2>Componente personaje:</h2>
     <h3>Listado de personajes:</h3>
     <div class="listado">
-        <div class="listado-items" *ngFor="let personaje of personajes">
-            <div class="listado-items-nombre">{{personaje.nombre}}</div>
-            <div class="listado-items-poder">{{personaje.poder}}</div>
-        </div>
+        <ul class="listado-items" *ngFor="let personaje of personajes">
+            <li class="listado-items-nombre">{{personaje.nombre}}</li>
+            <li class="listado-items-poder">{{personaje.poder}}</li>
+        </ul>
     </div>
 
     <div class="formulario">
