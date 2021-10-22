@@ -1,6 +1,10 @@
+.wrapper{
+    margin-top: 50px;
+}
+
 .formulario{
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     left: 350px;
 }
 
