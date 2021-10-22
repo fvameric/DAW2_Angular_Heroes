@@ -12,7 +12,7 @@
     dd {
     font-weight: bold;
     }
-    button {
+    button, .input-submit {
     background-color: black;
     border-radius: 5px;
     border: 0px;
@@ -22,7 +22,7 @@
     margin-left: 5px;
     padding: 5px 10px;
     }
-    button:hover {
+    button:hover, .input-submit:hover {
     background-color: #3e4144;
     }
     button:focus{
