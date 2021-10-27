@@ -25,9 +25,6 @@ import { MainPageComponent } from './dbz/main-page/main-page.component';
   ],
   providers: [],
   bootstrap: [
-    ContadorComponent,
-    HeroesComponent,
-    ListadoComponent,
     MainPageComponent]
 })
 export class AppModule { }

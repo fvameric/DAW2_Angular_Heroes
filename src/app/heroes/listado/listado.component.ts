@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // import necesario de la interface Heroe al estar en otro archivo
-import { Heroe } from 'src/app/heroes/Heroe';
+import { Heroe } from '../../interfaces/Heroe';
 
 @Component({
   selector: 'app-listado',
